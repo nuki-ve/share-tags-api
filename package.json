@@ -5,6 +5,7 @@
   "main": "index.ts",
   "type": "module",
   "scripts": {
+    "start": "node index.js",
     "dev": "node --watch index.js",
     "dev:mon": "nodemon index.js"
   },
