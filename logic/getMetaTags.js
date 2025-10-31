@@ -15,12 +15,18 @@ const META_SEO = [
   'name', 'description', 'image'
 ]
 
+/**
+ * Gets the favicon URL from the website.
+ * @param {cheerio.CheerioAPI} $ Cheerio instance
+ * @param {string} url Website URL
+ * @returns {string} Favicon URL
+ */
 function getFaviconUrl ($, url) {
   let favicon = $('link[rel="icon"]').attr('href') ||
     $('link[rel="shortcut icon"]').attr('href') ||
     '/favicon.ico' // fallback
 
-  // Convertir favicon a URL absoluta si es relativa
+  // Convert favicon relative URL to absolute
   if (favicon && !favicon.startsWith('http')) {
     favicon = new URL(favicon, url).href
   }
@@ -28,7 +34,11 @@ function getFaviconUrl ($, url) {
   return favicon
 }
 
-export default async function getMetaTagsFromUrls (website) {
+/**
+ * Extracts meta tags from a given website.
+ * @param {string} website Website domain
+ */
+export default async function getMetaTagsFromWebsite (website) {
   const url = `https://${website}`
   const metadata = { url }
 
