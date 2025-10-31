@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>share-tags-api by nukidev</title>
+  <link rel="icon" type="image/png" href="./favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <style>
+    body {
+      font-family: "Noto Sans", sans-serif;
+      margin: 2rem;
+      line-height: 1.6;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+    h2 {
+      margin-top: 0.5rem;
+      font-weight: normal;
+      color: #666;
+    }
+    main {
+      max-width: 800px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    code {
+      background-color: #eee;
+      padding: 0.2rem 0.4rem;
+      border-radius: 4px;
+      font-family: 'Courier New', Courier, monospace;
+    }
+    a {
+      color: #007BFF;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    small {
+      color: #999;
+    }
+  </style>
+  <header>
+    <h1>share-tags-api<h1>
+    <h2>From any website, get the metadata used by search engines and social media for display link previews</h2>
+  </header>
+  <main>
+    <div>
+      <h3>How to use:</h3>
+      <p>Add websites domain to the API URL, separated by commas</p>
+      <p>Example: 
+        <a href="http://share-tags-api.onrender.com/you.com,codi.link,notvalidurl">
+          <code>
+            http://share-tags-api.onrender.com/you.com,codi.link,notvalidurl
+          </code>
+        </a>
+      </p>
+
+      <p>Maximum 10 websites at a time</p>
+
+      <small>
+        <span>Note: the API only accept the full domain without protocols or extra symbols</span>
+        <br>
+        <span>✖ <code>.../https://color.adobe.com</code></span>
+        <br>
+        <span>✖ <code>.../color.adobe.com/</code></span>
+        <br>
+        <span>✖ <code>.../color.adobe/</code></span>
+        <br>
+        <span>✔ <code>.../color.adobe.com</code></span>
+      </small>
+    </div>
+    <div>
+      <h3>What returns?</h3>
+      <p>A JSON with the following information:</p>
+      <ul>
+        <li>count: length of the list</li>
+        <li>
+          <span>data: the array with the websites metadata</span>
+          <ul>
+            <li>The URL itself</li>
+            <li>Open Graph Protocol tags (e.g. "og:description")</li>
+            <li>Twitter Cards tags (e.g. "twitter:description")</li>
+            <li>SEO tags</li>
+            <li>HTML meta tags (title, description)</li>
+            <li>Favicon</li>
+            <li>error: An error message if there is one</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </main>
+
+  <footer>
+      <a href="https://nuki-ve.github.io/">
+        <p style="text-align: center; margin: 2rem 0;">☀nuki☀</p>
+      </a>
+    </footer>
+</body>
+</html>

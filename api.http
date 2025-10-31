@@ -2,4 +2,4 @@ GET http://localhost:3333/
 
 ###
 
-GET http://localhost:3333/you.com,codi.link,mycolor.space
+GET http://localhost:3333/codi.link,you.com,mycolor.space
