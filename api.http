@@ -2,4 +2,8 @@ GET http://localhost:3333/
 
 ###
 
+GET http://localhost:3333/areyoualive
+
+###
+
 GET http://localhost:3333/codi.link,you.com,mycolor.space

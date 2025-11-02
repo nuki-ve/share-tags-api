@@ -27,6 +27,11 @@ app.get('/favicon.ico', (_, res) => {
   res.sendFile(path.join(__dirname, '/favicon.ico'))
 })
 
+app.get('/areyoualive', (_, res) => {
+  res.contentType('text/plain')
+  res.send("yes, I'm alive :) 👍")
+})
+
 // API route
 // websites: comma separated list of urls
 app.get('/:websites', async (req, res) => {
