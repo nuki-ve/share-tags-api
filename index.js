@@ -19,15 +19,18 @@ app.use(logRequest)
 
 // HOMEPAGE route
 app.get('/', (_, res) => {
+  res.header('Access-Control-Allow-Origin', '*')
   res.sendFile(path.join(__dirname, '/index.html'))
 })
 
 // FAVICON route
 app.get('/favicon.ico', (_, res) => {
+  res.header('Access-Control-Allow-Origin', '*')
   res.sendFile(path.join(__dirname, '/favicon.ico'))
 })
 
 app.get('/areyoualive', (_, res) => {
+  res.header('Access-Control-Allow-Origin', '*')
   res.contentType('text/plain')
   res.send("yes, I'm alive :) 👍")
 })
@@ -35,6 +38,7 @@ app.get('/areyoualive', (_, res) => {
 // API route
 // websites: comma separated list of urls
 app.get('/:websites', async (req, res) => {
+  res.header('Access-Control-Allow-Origin', '*')
   // Limit to 10 URLs per request
   const urls = trimWebsites(req.params.websites).slice(0, 10)
 
