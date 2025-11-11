@@ -40,7 +40,7 @@ function getFaviconUrl ($, url) {
  */
 export default async function getMetaTagsFromWebsite (website) {
   const url = `https://${website}`
-  const metadata = { url }
+  const metadata = { url, error: null }
 
   try {
     const { data } = await axios.get(url)
